@@ -21,7 +21,7 @@ class TransfermarktPlayerSearch(TransfermarktBase):
 
     query: str = None
     URL: str = (
-        "https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query={query}&Spieler_page={page_number}"
+        "https://www.transfermarkt.com.tr/schnellsuche/ergebnis/schnellsuche?query={query}&Spieler_page={page_number}"
     )
     page_number: int = 1
 

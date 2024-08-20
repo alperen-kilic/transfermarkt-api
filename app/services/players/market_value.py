@@ -22,8 +22,8 @@ class TransfermarktPlayerMarketValue(TransfermarktBase):
     """
 
     player_id: str = None
-    URL: str = "https://www.transfermarkt.com/-/marktwertverlauf/spieler/{player_id}"
-    URL_MARKET_VALUE: str = "https://www.transfermarkt.com/ceapi/marketValueDevelopment/graph/{player_id}"
+    URL: str = "https://www.transfermarkt.com.tr/-/marktwertverlauf/spieler/{player_id}"
+    URL_MARKET_VALUE: str = "https://www.transfermarkt.com.tr/ceapi/marketValueDevelopment/graph/{player_id}"
 
     def __post_init__(self) -> None:
         """Initialize the TransfermarktPlayerMarketValue class."""

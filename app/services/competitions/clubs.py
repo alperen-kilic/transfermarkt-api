@@ -19,7 +19,7 @@ class TransfermarktCompetitionClubs(TransfermarktBase):
 
     competition_id: str = None
     season_id: str = None
-    URL: str = "https://www.transfermarkt.com/-/startseite/wettbewerb/{competition_id}/plus/?saison_id={season_id}"
+    URL: str = "https://www.transfermarkt.com.tr/-/startseite/wettbewerb/{competition_id}/plus/?saison_id={season_id}"
 
     def __post_init__(self) -> None:
         """Initialize the TransfermarktCompetitionClubs class."""

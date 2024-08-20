@@ -17,7 +17,7 @@ class TransfermarktPlayerJerseyNumbers(TransfermarktBase):
     """
 
     player_id: str = None
-    URL: str = "https://www.transfermarkt.com/-/rueckennummern/spieler/{player_id}"
+    URL: str = "https://www.transfermarkt.com.tr/-/rueckennummern/spieler/{player_id}"
 
     def __post_init__(self) -> None:
         """Initialize the TransfermarktJerseyNumbers class."""
