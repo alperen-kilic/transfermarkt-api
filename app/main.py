@@ -5,6 +5,7 @@ from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from slowapi.util import get_remote_address
 from starlette.responses import RedirectResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.api import api_router
 from app.settings import settings
@@ -15,10 +16,18 @@ limiter = Limiter(
     enabled=settings.RATE_LIMITING_ENABLE,
 )
 app = FastAPI(title="Transfermarkt API")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 app.add_middleware(SlowAPIMiddleware)
 app.include_router(api_router)
+
+
 
 
 @app.get("/", include_in_schema=False)
